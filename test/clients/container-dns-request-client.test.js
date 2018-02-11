@@ -1,17 +1,17 @@
 'use strict';
 
-require('./helper');
+require('../helper');
 
-const Client = require('../').ContainerDNSClient;
+const Client = require('../../index').ContainerDNSClient;
 
 // Fixtures
-const GET_FIXTURE     = require('./fixtures/get.json');
-const OPTIONS_FIXTURE = require('./fixtures/options.json');
-const HEAD_FIXTURE    = require('./fixtures/head.json');
-const PUT_FIXTURE     = require('./fixtures/put.json');
-const POST_FIXTURE    = require('./fixtures/post.json');
-const PATCH_FIXTURE   = require('./fixtures/patch.json');
-const DELETE_FIXTURE  = require('./fixtures/delete.json');
+const GET_FIXTURE     = require('../fixtures/get.json');
+const OPTIONS_FIXTURE = require('../fixtures/options.json');
+const HEAD_FIXTURE    = require('../fixtures/head.json');
+const PUT_FIXTURE     = require('../fixtures/put.json');
+const POST_FIXTURE    = require('../fixtures/post.json');
+const PATCH_FIXTURE   = require('../fixtures/patch.json');
+const DELETE_FIXTURE  = require('../fixtures/delete.json');
 const HEADERS         = { headers: { 'Content-Type': 'application/json' } };
 
 let sandbox, client;

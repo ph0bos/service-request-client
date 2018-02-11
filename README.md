@@ -10,7 +10,7 @@ Supported service discovery technologies include:
 * Basic Host Port
 
 
-[![NPM](https://nodei.co/npm/request-service-discovery-v2.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request-service-discovery/)
+[![NPM](https://nodei.co/npm/service-request-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/service-request-client/)
 
 
 ## Basic Usage

@@ -1,6 +1,6 @@
-# Request Service Discovery )v2)
+# Service Request Client
 
-Utility module for making HTTP requests against discoverable services.
+Utility module for making HTTP requests against discoverable HTTP services.
 
 Supported service discovery technologies include:
 
@@ -20,14 +20,19 @@ The following is the most basic usage of the client;
 ```javascript
 'use strict';
 
-const Client = require('request-service-discovery-v2').ContainerDNSClient;
+const Client = require('service-request-client').ContainerDNSClient;
 
 // Instantiate a client
 const client = new Client(
   'service-name', 
   8001, 
   'my/service/path/v1', 
-  { verbose: true, retries: 2 }
+  { 
+    verbose: true, 
+    retries: 2,
+    timeoutMs: 3000, 
+    correlationHeaderName: 'X-Unity-CorrelationID'
+  }
 );
 
 const query = {

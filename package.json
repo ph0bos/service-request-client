@@ -1,21 +1,21 @@
 {
-  "name": "request-service-discovery-v2",
+  "name": "service-request-client",
   "version": "0.0.1",
-  "description": "An extension to request to facilitate making requests against discoverable services",
+  "description": "An extension to request to facilitate making requests against discoverable HTTP services",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ph0bos/request-service-discovery-v2.git"
+    "url": "git+https://github.com/ph0bos/service-request-client.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ph0bos/request-service-discovery-v2/issues"
+    "url": "https://github.com/ph0bos/service-request-client/issues"
   },
-  "homepage": "https://github.com/ph0bos/request-service-discovery-v2#readme",
+  "homepage": "https://github.com/ph0bos/service-request-client#readme",
   "dependencies": {
     "bunyan": "^1.8.12",
     "check-types": "^7.3.0",

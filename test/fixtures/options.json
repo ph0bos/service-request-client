@@ -1,0 +1,20 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "connection": "close"
+  },
+  "request": {
+    "uri": {
+      "protocol": "http:",
+      "host": "localhost:80",
+      "port": "80",
+      "hostname": "localhost",
+      "href": "http://localhost:80/resource-name/123"
+    },
+    "method": "OPTIONS",
+    "headers": {
+      "X-Unity-CorrelationId": "5d14c8ea-54f4-4e1a-8e5e-6eff865dc768"
+    }
+  }
+}

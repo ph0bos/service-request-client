@@ -2,7 +2,7 @@
 
 require('./helper');
 
-const Client = require('../').ContainerDNSClient;
+const Client = require('../').HostPortClient;
 
 // Fixtures
 const GET_FIXTURE     = require('./fixtures/get.json');
@@ -16,9 +16,9 @@ const HEADERS         = { headers: { 'Content-Type': 'application/json' } };
 
 let sandbox, client;
 
-describe('container-dns-request', () => {
+describe('host-port-request-client', () => {
   beforeEach(() => {
-    client = new Client('service-name', 8001, 'my/service/path/v1', { verbose: true, retries: 2 });
+    client = new Client('hostname', 8001, 'my/service/path/v1', { verbose: true, retries: 2 });
 
     sandbox = sinon.sandbox.create();
     sandbox.spy(client, '_executeRequest');

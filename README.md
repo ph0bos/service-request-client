@@ -64,22 +64,22 @@ try {
 }
 
 // Invoke a PUT request against the service
-client.put('item', { query: query, headers: headers }, body)
+client.put('item', { query, headers }, body)
   .then(res => console.log(res.body))
   .catch(err => console.log(err));
 
 // Invoke a POST request against the service
-client.post('item', { query: query, headers: headers }, body)
+client.post('item', { query, headers }, body)
   .then(res => console.log(res.body))
   .catch(err => console.log(err));  
 
 // Invoke a DELETE request against the service
-client.delete('item', { query: query, headers: headers }, body)
+client.delete('item', { query, headers }, body)
   .then(res => console.log(res.body))
   .catch(err => console.log(err));
 
  // Invoke a GET request against the service
- client.method('item/search', { method: 'GET', query: query, headers: headers }, body)
+ client.method('GET', 'item/search', { query, headers }, body)
    .then(res => console.log(res.body))
    .catch(err => console.log(err));  
 ````

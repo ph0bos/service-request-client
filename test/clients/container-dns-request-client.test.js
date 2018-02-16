@@ -65,6 +65,49 @@ describe('container-dns-request-client', () => {
         client._executeRequest.callCount.should.equal(1);
       }
     });
+
+    it('should create a new correlationId header when a request is called multiple times', async () => {
+      client._end.yields(null, GET_FIXTURE);
+
+      const expected = {
+        statusCode: 200,
+        request: { method: 'GET', uri: { href: 'http://localhost:80/resource-name/123' } }
+      };
+
+      const options = {
+        headers: {
+          'Accept': "application/json"
+        }
+      };
+
+      (await client.get('resource-name/123', options)).should.containSubset(expected);
+      const firstCorrelationId = client._end.firstCall.args[0].options.headers['X-CorrelationID'];
+
+
+      (await client.get('resource-name/123', options)).should.containSubset(expected);
+      const secondCorrelationId = client._end.secondCall.args[0].options.headers['X-CorrelationID'];
+
+      secondCorrelationId.should.not.equal(firstCorrelationId);
+    });
+
+    it('should preserve the correlationId header when a request is called multiple times', async () => {
+      client._end.yields(null, GET_FIXTURE);
+
+      const expected = {
+        statusCode: 200,
+        request: { method: 'GET', uri: { href: 'http://localhost:80/resource-name/123' } }
+      };
+
+      const options = {
+          correlationId: "123456789"
+      };
+
+      (await client.get('resource-name/123', options)).should.containSubset(expected);
+      client._end.firstCall.args[0].options.headers['X-CorrelationID'].should.equal(options.correlationId);
+
+      (await client.get('resource-name/123', options)).should.containSubset(expected);
+      client._end.secondCall.args[0].options.headers['X-CorrelationID'].should.equal(options.correlationId);
+    });
   });
 
   describe('#head()', () => {
